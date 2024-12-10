@@ -10,6 +10,7 @@ public abstract class Usuario {
     }
 
     public String getEmail() {
+        //email usuario
         return email;
     }
 
