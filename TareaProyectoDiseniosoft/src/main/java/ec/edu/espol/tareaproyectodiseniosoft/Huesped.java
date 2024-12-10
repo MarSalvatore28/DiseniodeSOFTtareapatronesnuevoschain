@@ -1,4 +1,5 @@
-
+package ec.edu.espol.tareaproyectodiseniosoft;
+import java.util.Date ;
 
 public class Huesped extends Usuario {
     public void reportarIncidente(String descripcion, ManejadorIncidente manejadorInicial) {
