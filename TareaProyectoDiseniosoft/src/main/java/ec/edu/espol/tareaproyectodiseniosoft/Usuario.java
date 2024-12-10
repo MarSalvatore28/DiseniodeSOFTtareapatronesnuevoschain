@@ -5,6 +5,7 @@ public abstract class Usuario {
     private String nombre;
     private String email;
 
+    //la clase existe para que mas adelante podamos simular un usuario mas personalizado 
     public String getNombre() {
         return nombre;
     }
