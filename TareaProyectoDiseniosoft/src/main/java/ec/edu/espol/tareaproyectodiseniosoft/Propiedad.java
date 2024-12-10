@@ -4,6 +4,7 @@
  */
 package ec.edu.espol.tareaproyectodiseniosoft;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,7 +12,11 @@ import java.util.List;
  * @author DHAMAR
  */
 public class Propiedad {
-     private List<Unidad> unidades;
+    private int id;
+    private String nombre;
+    private String direccion;
+    private ReglasPropiedad reglas;
+    private List<Unidad> unidades;
 
     public List<Unidad> verificarDisponibilidad() {
         List<Unidad> disponibles = new ArrayList<>();
