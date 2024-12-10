@@ -4,7 +4,7 @@
 
 package ec.edu.espol.tareaproyectodiseniosoft;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  *
@@ -20,7 +20,7 @@ public class Main {
         unidad.actualizarEstado(EstadoUnidad.DISPONIBLE);
 
         MetodoPago metodo = new TarjetaCredit();
-        huesped.realizarReserva(sistema, unidad, new Date(0, 0, 0), new Date(), metodo, 500.0);
+        huesped.realizarReserva(sistema, unidad, new Date(), new Date(), metodo, 500.0);
 
         // Configurar chain de incidentes
         ManejadorIncidente anfitrion = new nfitrionIncidente();
