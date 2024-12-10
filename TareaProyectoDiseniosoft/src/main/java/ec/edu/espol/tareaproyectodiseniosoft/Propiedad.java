@@ -15,7 +15,7 @@ public class Propiedad {
     private int id;
     private String nombre;
     private String direccion;
-    private ReglasPropiedad reglas;
+    private String reglas;
     private List<Unidad> unidades;
 
     public List<Unidad> verificarDisponibilidad() {

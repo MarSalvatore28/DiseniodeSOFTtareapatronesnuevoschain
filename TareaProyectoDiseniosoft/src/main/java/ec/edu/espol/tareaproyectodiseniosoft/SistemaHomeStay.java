@@ -16,7 +16,7 @@ public class SistemaHomeStay {
         return new ArrayList<>();
     }
 
-    public Reserva crearReserva(Huesped huesped, Unidad unidad, Date fechaInicio, Date fechaFin) {
+    public Reserva crearReserva(Huesped huesped, Unidad unidad, java.util.Date fechaInicio, java.util.Date fechaFin) {
         System.out.println("Creando reserva para el huésped: " + huesped.getNombre());
         return new Reserva(huesped, unidad, fechaInicio, fechaFin);
     }
