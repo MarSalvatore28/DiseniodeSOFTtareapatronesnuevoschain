@@ -15,7 +15,7 @@ public class Main {
         Notificador notificador = new EmailNotificador();
         SistemaHomeStay sistema = new SistemaHomeStay(notificador);
 
-        Huesped huesped = new Huesped();
+        Huesped huesped = new Huesped(1, "Juan Pérez", "juan.perez@example.com");
         Unidad unidad = new Unidad();
         unidad.actualizarEstado(EstadoUnidad.DISPONIBLE);
 
