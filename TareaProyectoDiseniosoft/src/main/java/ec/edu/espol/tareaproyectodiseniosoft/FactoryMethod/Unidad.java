@@ -29,6 +29,18 @@ public class Unidad {
         this.fechaDisponibleDesde = fechaDisponibleDesde;
         this.fechaDisponibleHasta = fechaDisponibleHasta;
     }
+    
+    public boolean estaDisponible(LocalDate fechaInicio, LocalDate fechaFin) {
+        return estado == EstadoUnidad.DISPONIBLE &&
+               !fechaInicio.isBefore(fechaDisponibleDesde) &&
+               !fechaFin.isAfter(fechaDisponibleHasta);
+    }
+    
+    
+    
+    public void reservar() {
+        this.estado = EstadoUnidad.RESERVADA;
+    }
 
     public String getId() {
         return id;
