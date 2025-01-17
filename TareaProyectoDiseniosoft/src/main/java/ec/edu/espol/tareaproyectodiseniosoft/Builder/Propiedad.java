@@ -16,9 +16,7 @@ import java.util.List;
  * @author DHAMAR
  */
 public class Propiedad {
-   private String id;
-
-    
+    private String id;
     private String nombre;
     private String direccion;
     private List<String> reglas;
