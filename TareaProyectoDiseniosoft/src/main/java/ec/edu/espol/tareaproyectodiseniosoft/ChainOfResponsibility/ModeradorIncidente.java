@@ -1,4 +1,6 @@
-package ec.edu.espol.tareaproyectodiseniosoft;
+package ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility;
+
+import ec.edu.espol.tareaproyectodiseniosoft.Incidente;
 
 public class ModeradorIncidente extends ManejadorIncidente {
     @Override

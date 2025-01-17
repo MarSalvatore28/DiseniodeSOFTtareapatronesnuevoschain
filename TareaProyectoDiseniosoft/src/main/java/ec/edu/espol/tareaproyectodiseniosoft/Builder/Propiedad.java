@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ec.edu.espol.tareaproyectodiseniosoft;
+package ec.edu.espol.tareaproyectodiseniosoft.Builder;
 
+import ec.edu.espol.tareaproyectodiseniosoft.EstadoUnidad;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
 import java.util.ArrayList;
 import java.util.List;
 

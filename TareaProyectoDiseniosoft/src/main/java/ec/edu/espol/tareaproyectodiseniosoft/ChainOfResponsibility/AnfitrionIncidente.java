@@ -1,6 +1,8 @@
-package ec.edu.espol.tareaproyectodiseniosoft;
+package ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility;
 
-public class nfitrionIncidente extends ManejadorIncidente {
+import ec.edu.espol.tareaproyectodiseniosoft.Incidente;
+
+public class AnfitrionIncidente extends ManejadorIncidente {
     @Override
     public void manejar(Incidente incidente) {
         if (incidente.getDescripcion().contains("leve")) {

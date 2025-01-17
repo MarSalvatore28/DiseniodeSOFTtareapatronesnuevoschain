@@ -1,5 +1,7 @@
 package ec.edu.espol.tareaproyectodiseniosoft;
 
+import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.ManejadorIncidente;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
 import java.util.Date;
 
 public class Huesped extends Usuario {

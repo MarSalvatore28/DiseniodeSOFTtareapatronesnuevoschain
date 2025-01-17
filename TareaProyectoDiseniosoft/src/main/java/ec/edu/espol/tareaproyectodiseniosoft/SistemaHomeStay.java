@@ -1,5 +1,8 @@
 package ec.edu.espol.tareaproyectodiseniosoft;
 
+import ec.edu.espol.tareaproyectodiseniosoft.Observer.Notificador;
+import ec.edu.espol.tareaproyectodiseniosoft.Builder.Propiedad;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;

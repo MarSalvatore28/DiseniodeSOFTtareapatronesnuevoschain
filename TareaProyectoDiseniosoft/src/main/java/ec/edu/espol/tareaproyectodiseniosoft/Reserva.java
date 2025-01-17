@@ -4,6 +4,9 @@
  */
 package ec.edu.espol.tareaproyectodiseniosoft;
 
+import ec.edu.espol.tareaproyectodiseniosoft.EstadoPago;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
+import ec.edu.espol.tareaproyectodiseniosoft.Huesped;
 import java.util.Date;
 
 /**

@@ -4,6 +4,13 @@
 
 package ec.edu.espol.tareaproyectodiseniosoft;
 
+import ec.edu.espol.tareaproyectodiseniosoft.Observer.EmailNotificador;
+import ec.edu.espol.tareaproyectodiseniosoft.Observer.Notificador;
+import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.ManejadorIncidente;
+import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.ModeradorIncidente;
+import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.SoporteLegalIncidente;
+import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.AnfitrionIncidente;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
 import java.util.Date;
 
 /**
@@ -23,7 +30,7 @@ public class Main {
         huesped.realizarReserva(sistema, unidad, new Date(), new Date(), metodo, 500.0);
 
         // Configurar chain de incidentes
-        ManejadorIncidente anfitrion = new nfitrionIncidente();
+        ManejadorIncidente anfitrion = new AnfitrionIncidente();
         ManejadorIncidente moderador = new ModeradorIncidente();
         ManejadorIncidente soporteLegal = new SoporteLegalIncidente();
 
