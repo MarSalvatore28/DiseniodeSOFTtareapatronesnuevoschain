@@ -10,8 +10,15 @@ import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.ManejadorInci
 import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.ModeradorIncidente;
 import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.SoporteLegalIncidente;
 import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.AnfitrionIncidente;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.CasaFactory;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.DepartamentoFactory;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.HabitacionPrivadaFactory;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.UnidadFactory;
+
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -20,45 +27,15 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-        ManejadorIncidente anfitrion = new AnfitrionIncidente();
-        ManejadorIncidente moderador = new ModeradorIncidente();
-        ManejadorIncidente soporteLegal = new SoporteLegalIncidente();
+UnidadFactory habitacionFactory = new HabitacionPrivadaFactory();
+        Unidad habitacion = habitacionFactory.crearUnidad("H001", 100.0, List.of("WiFi", "TV"), LocalDate.now(), LocalDate.now().plusDays(5));
+        
+        UnidadFactory departamentoFactory = new DepartamentoFactory();
+        Unidad departamento = departamentoFactory.crearUnidad("D001", 200.0, List.of("WiFi", "Cocina"), LocalDate.now(), LocalDate.now().plusDays(10));
+        
+        UnidadFactory casaFactory = new CasaFactory();
+        Unidad casa = casaFactory.crearUnidad("C001", 300.0, List.of("WiFi", "Jardín", "Piscina"), LocalDate.now(), LocalDate.now().plusDays(15));
 
-        anfitrion.establecerSiguiente(moderador);
-        moderador.establecerSiguiente(soporteLegal);
 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("=== Sistema de Gestión de Incidentes ===");
-
-        while (true) {
-            System.out.print("\nIngrese la descripción del incidente: ");
-            String descripcion = scanner.nextLine();
-
-            System.out.print("Ingrese el nivel de severidad del incidente (1-10): ");
-            int nivelSeveridad = Integer.parseInt(scanner.nextLine());
-
-            Incidente incidente = new Incidente(descripcion, nivelSeveridad);
-            System.out.println("\nProcesando incidente...");
-            anfitrion.manejarIncidente(incidente);
-
-            System.out.println("\nEstado del Incidente:");
-            imprimirEstado(incidente);
-
-            System.out.print("\n¿Desea reportar otro incidente? (s/n): ");
-            String respuesta = scanner.nextLine();
-            if (!respuesta.equalsIgnoreCase("s")) {
-                break;
-            }
-        }
-
-        scanner.close();
-    }
-
-    private static void imprimirEstado(Incidente incidente) {
-        System.out.println("ID: " + incidente.getId());
-        System.out.println("Descripción: " + incidente.getDescripcion());
-        System.out.println("Nivel de Severidad: " + incidente.getNivelSeveridad());
-        System.out.println("Estado: " + (incidente.isResuelto() ? "Resuelto" : "Pendiente"));
     }
 }
