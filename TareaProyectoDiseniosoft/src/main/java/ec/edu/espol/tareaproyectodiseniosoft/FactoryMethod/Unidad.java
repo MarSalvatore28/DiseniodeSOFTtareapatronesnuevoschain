@@ -35,7 +35,9 @@ public class Unidad {
                !fechaInicio.isBefore(fechaDisponibleDesde) &&
                !fechaFin.isAfter(fechaDisponibleHasta);
     }
-    
+    public Unidad(String id) {
+        this.id = id;
+    }
     
     
     public void reservar() {
