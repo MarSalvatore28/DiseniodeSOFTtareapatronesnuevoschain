@@ -9,9 +9,11 @@ package ec.edu.espol.tareaproyectodiseniosoft;
  * @author DHAMAR
  */
 public class Anfitrion extends Usuario{
-    
-    public Anfitrion(int id, String nombre, String email) {
+
+    public Anfitrion(String id, String nombre, String email) {
         super(id, nombre, email);
     }
+    
+
     
 }

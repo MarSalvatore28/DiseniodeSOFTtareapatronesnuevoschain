@@ -6,9 +6,11 @@ import java.util.Date;
 
 public class Huesped extends Usuario {
 
-    public Huesped(int id, String nombre, String email) {
+    public Huesped(String id, String nombre, String email) {
         super(id, nombre, email);
     }
+
+
 
     public void reportarIncidente(String descripcion, ManejadorIncidente manejadorInicial) {
         Incidente incidente = new Incidente(descripcion);
