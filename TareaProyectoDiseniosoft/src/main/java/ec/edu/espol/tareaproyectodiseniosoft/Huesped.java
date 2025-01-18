@@ -2,9 +2,11 @@ package ec.edu.espol.tareaproyectodiseniosoft;
 
 import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.ManejadorIncidente;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
+import ec.edu.espol.tareaproyectodiseniosoft.Observer.Observer;
+
 import java.util.Date;
 
-public class Huesped extends Usuario {
+public class Huesped extends Usuario implements Observer {
 
     public Huesped(String id, String nombre, String email) {
         super(id, nombre, email);
@@ -33,5 +35,16 @@ public class Huesped extends Usuario {
         } else {
             System.out.println("Unidad no disponible.");
         }
+    }
+
+    // Sobrescribe el método de notificación para personalizar el mensaje
+    @Override
+    public void recibirNotificacion(String mensaje) {
+        System.out.println("Notificación para el Huesped " + getNombre() + " (" + getEmail() + "): " + mensaje);
+    }
+
+    @Override
+    public void actualizar(String mensaje) {
+        recibirNotificacion(mensaje);
     }
 }
