@@ -1,6 +1,6 @@
 package ec.edu.espol.tareaproyectodiseniosoft.Observer;
 
-import java.util.Observer;
+
 
 public interface Subject {
     void agregarObserver(Observer observer);
