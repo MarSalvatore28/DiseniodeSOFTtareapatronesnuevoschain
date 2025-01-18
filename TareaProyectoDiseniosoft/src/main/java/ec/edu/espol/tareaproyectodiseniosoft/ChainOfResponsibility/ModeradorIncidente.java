@@ -3,12 +3,17 @@ package ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility;
 import ec.edu.espol.tareaproyectodiseniosoft.Incidente;
 
 public class ModeradorIncidente extends ManejadorIncidente {
-    @Override
-    public void manejar(Incidente incidente) {
-        if (incidente.getDescripcion().contains("moderado")) {
-            System.out.println("Incidente resuelto por el moderador.");
+    
+     @Override
+    public void manejarIncidente(Incidente incidente) {
+        if (incidente.isResuelto()) {
+            return; // Si ya está resuelto, no procesar
+        }
+        if (incidente.getNivelSeveridad() <= 7) {
+            System.out.println("Incidente manejado por el moderador: " + incidente.getDescripcion());
+            incidente.setResuelto(true);
         } else if (siguiente != null) {
-            siguiente.manejar(incidente);
+            siguiente.manejarIncidente(incidente);
         }
     }
 }
