@@ -14,6 +14,9 @@ import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.DepartamentoFactory;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.HabitacionPrivadaFactory;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.UnidadFactory;
+import ec.edu.espol.tareaproyectodiseniosoft.Observer.NotificadorAppMensajeria;
+import ec.edu.espol.tareaproyectodiseniosoft.Observer.NotificadorEmail;
+import ec.edu.espol.tareaproyectodiseniosoft.Observer.NotificadorSMS;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -36,5 +39,23 @@ public class Main {
         UnidadFactory casaFactory = new CasaFactory();
         Unidad casa = casaFactory.crearUnidad("C001", 300.0, List.of("WiFi", "Jardín", "Piscina"), LocalDate.now(), LocalDate.now().plusDays(15));
 
+        // observer 
+        Reserva reserva = new Reserva("PENDIENTE");
+
+        //notificadores al fin 
+        NotificadorSMS notificadorSMS = new NotificadorSMS();
+        NotificadorEmail notificadorEmail = new NotificadorEmail();
+        NotificadorAppMensajeria notificadorApp = new NotificadorAppMensajeria();
+
+        // agregando notificadores 
+        reserva.agregarObserver(notificadorSMS);
+        reserva.agregarObserver(notificadorEmail);
+        reserva.agregarObserver(notificadorApp);
+
+        // Cambiar el estado de la reserva (esto notificará a todos los observadores)
+        reserva.cambiarEstado("CONFIRMADA");
+
+        // Cambiar el estado de la reserva a "FINALIZADA" (notificación para todos los observadores nuevamente)
+        reserva.cambiarEstado("FINALIZADA");
     }
 }
