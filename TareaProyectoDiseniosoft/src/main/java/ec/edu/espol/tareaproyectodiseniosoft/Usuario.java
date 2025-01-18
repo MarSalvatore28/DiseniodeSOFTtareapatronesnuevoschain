@@ -33,9 +33,6 @@ public class Usuario {
     public String getNombre() {
         return nombre;
     }
-    public String getEmail() {
-        return email;
-    }
 
     // Método de notificación genérico, a ser sobrescrito por las clases hijas
     public void recibirNotificacion(String mensaje) {
