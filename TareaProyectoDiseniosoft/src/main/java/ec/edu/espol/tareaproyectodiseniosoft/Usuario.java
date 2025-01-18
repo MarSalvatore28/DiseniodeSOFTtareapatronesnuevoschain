@@ -1,6 +1,6 @@
 package ec.edu.espol.tareaproyectodiseniosoft;
 
-public abstract class Usuario {
+public class Usuario {
     private String id;
     private String nombre;
 
