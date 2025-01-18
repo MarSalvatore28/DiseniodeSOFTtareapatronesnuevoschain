@@ -10,5 +10,13 @@ public abstract class ManejadorIncidente {
     }
 
     public abstract void manejarIncidente(Incidente incidente);
-
+    
+    
+    protected void escalarIncidente(Incidente incidente) {
+        if (siguiente != null) {
+            siguiente.manejarIncidente(incidente);
+        } else {
+            System.out.println("Nadie pudo resolver el incidente. Escalando a soporte externo.");
+        }
+    }
 }

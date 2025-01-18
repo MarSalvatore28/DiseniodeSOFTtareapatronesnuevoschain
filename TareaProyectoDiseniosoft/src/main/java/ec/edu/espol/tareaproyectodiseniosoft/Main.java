@@ -12,6 +12,7 @@ import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.SoporteLegalI
 import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.AnfitrionIncidente;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  *
@@ -19,25 +20,45 @@ import java.util.Date;
  */
 public class Main {
     public static void main(String[] args) {
-        Notificador notificador = new EmailNotificador();
-        SistemaHomeStay sistema = new SistemaHomeStay(notificador);
-
-        Huesped huesped = new Huesped(1, "Juan Pérez", "juan.perez@example.com");
-        Unidad unidad = new Unidad();
-        unidad.actualizarEstado(EstadoUnidad.DISPONIBLE);
-
-        MetodoPago metodo = new TarjetaCredit();
-        huesped.realizarReserva(sistema, unidad, new Date(), new Date(), metodo, 500.0);
-
-        // Configurar chain de incidentes
         ManejadorIncidente anfitrion = new AnfitrionIncidente();
         ManejadorIncidente moderador = new ModeradorIncidente();
         ManejadorIncidente soporteLegal = new SoporteLegalIncidente();
 
-        anfitrion.setSiguiente(moderador);
-        moderador.setSiguiente(soporteLegal);
+        anfitrion.establecerSiguiente(moderador);
+        moderador.establecerSiguiente(soporteLegal);
 
-        // Reportar incidente
-        huesped.reportarIncidente("Incidente moderado", anfitrion);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("=== Sistema de Gestión de Incidentes ===");
+
+        while (true) {
+            System.out.print("\nIngrese la descripción del incidente: ");
+            String descripcion = scanner.nextLine();
+
+            System.out.print("Ingrese el nivel de severidad del incidente (1-10): ");
+            int nivelSeveridad = Integer.parseInt(scanner.nextLine());
+
+            Incidente incidente = new Incidente(descripcion, nivelSeveridad);
+            System.out.println("\nProcesando incidente...");
+            anfitrion.manejarIncidente(incidente);
+
+            System.out.println("\nEstado del Incidente:");
+            imprimirEstado(incidente);
+
+            System.out.print("\n¿Desea reportar otro incidente? (s/n): ");
+            String respuesta = scanner.nextLine();
+            if (!respuesta.equalsIgnoreCase("s")) {
+                break;
+            }
+        }
+
+        scanner.close();
+    }
+
+    private static void imprimirEstado(Incidente incidente) {
+        System.out.println("ID: " + incidente.getId());
+        System.out.println("Descripción: " + incidente.getDescripcion());
+        System.out.println("Nivel de Severidad: " + incidente.getNivelSeveridad());
+        System.out.println("Estado: " + (incidente.isResuelto() ? "Resuelto" : "Pendiente"));
     }
 }

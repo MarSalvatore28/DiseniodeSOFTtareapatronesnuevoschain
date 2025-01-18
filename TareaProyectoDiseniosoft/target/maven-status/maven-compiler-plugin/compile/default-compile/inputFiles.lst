@@ -1,18 +1,26 @@
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\ManejadorIncidente.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Huesped.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\nfitrionIncidente.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\MetodoPago.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Propiedad.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Usuario.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Incidente.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\ModeradorIncidente.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Main.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\EstadoPago.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Notificador.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Reserva.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\TarjetaCredit.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\SistemaHomeStay.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Unidad.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\EstadoUnidad.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\EmailNotificador.java
-C:\Users\CltControl\Documents\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\SoporteLegalIncidente.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Observer\Subject.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\FactoryMethod\Unidad.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Builder\CasaBuilder.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Observer\Observer.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\ChainOfResponsibility\SoporteLegalIncidente.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Builder\Builder.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\EstadoPago.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Huesped.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Builder\DirectorPropiedad.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\MetodoPago.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Observer\Notificador.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Builder\ApartamentoBuilder.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\TarjetaCredit.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Observer\EmailNotificador.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Builder\VillaBuilder.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\ChainOfResponsibility\ModeradorIncidente.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Main.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Reserva.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\SistemaHomeStay.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Incidente.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\ChainOfResponsibility\ManejadorIncidente.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Anfitrion.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\ChainOfResponsibility\AnfitrionIncidente.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\EstadoUnidad.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Usuario.java
+C:\Users\DHAMAR\Documents\1 - Universidad\Diseño Software\DiseniodeSOFTtareapatronesnuevoschain\TareaProyectoDiseniosoft\src\main\java\ec\edu\espol\tareaproyectodiseniosoft\Builder\Propiedad.java
