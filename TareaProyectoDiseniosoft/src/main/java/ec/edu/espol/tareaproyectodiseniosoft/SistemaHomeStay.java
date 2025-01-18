@@ -28,10 +28,10 @@ public class SistemaHomeStay {
         System.out.println("Procesando pago...");
         boolean resultado = metodo.procesar(monto);
         if (resultado) {
-            reserva.setEstado(EstadoPago.COMPLETO);
+           // reserva.setEstado(EstadoPago.COMPLETO);
             notificador.enviarNotificacion(reserva.getHuesped().getEmail(), "Pago completado.");
         } else {
-            reserva.setEstado(EstadoPago.FALLIDO);
+            //reserva.setEstado(EstadoPago.FALLIDO);
             notificador.enviarNotificacion(reserva.getHuesped().getEmail(), "Pago fallido.");
         }
         return resultado;

@@ -7,7 +7,7 @@ import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
 
 public class DirectorPropiedad {
     public void construirApartamento(Builder builder) {
-        builder.reset();
+        builder.reset();// Limpia el estado del builder para crear una nueva propiedad
         builder.setId("AP001");
         builder.setNombre("Apartamento Lujo");
         builder.setDireccion("Calle Principal #123");
@@ -21,9 +21,10 @@ public class DirectorPropiedad {
         builder.setId("VL001");
         builder.setNombre("Villa de Campo");
         builder.setDireccion("Avenida Bosque #456");
-        builder.setReglas(List.of("Solo adultos", "No fiestas grandes"));
+        builder.setReglas(List.of("Solo adultos", "No fiestas grandes"));// Reglas personalizadas para la villa.
         builder.setUnidades(List.of(new Unidad("V001")));
-        builder.setAnfitrion(new Usuario("ANF002", "Carlos López"));
+        builder.setAnfitrion(new Usuario("ANF002", "Carlos López"));// Define el anfitrión de la villa.
+    
     }
 
     public void construirCasa(Builder builder) {
@@ -32,7 +33,7 @@ public class DirectorPropiedad {
         builder.setNombre("Casa Familiar");
         builder.setDireccion("Calle Jardín #789");
         builder.setReglas(List.of("Respetar vecinos", "No fiestas después de las 10 PM"));
-        builder.setUnidades(List.of(new Unidad("C001"), new Unidad("C002"), new Unidad("C003")));
+        builder.setUnidades(List.of(new Unidad("C001"), new Unidad("C002"), new Unidad("C003")));// Varias unidades disponibles.
         builder.setAnfitrion(new Usuario("ANF003", "Sofía Gómez"));
     }
 

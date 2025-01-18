@@ -1,7 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package ec.edu.espol.tareaproyectodiseniosoft;
 
 import ec.edu.espol.tareaproyectodiseniosoft.Observer.EmailNotificador;
@@ -10,8 +9,18 @@ import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.ManejadorInci
 import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.ModeradorIncidente;
 import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.SoporteLegalIncidente;
 import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.AnfitrionIncidente;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.CasaFactory;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.DepartamentoFactory;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.HabitacionPrivadaFactory;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.UnidadFactory;
+import ec.edu.espol.tareaproyectodiseniosoft.Observer.NotificadorAppMensajeria;
+import ec.edu.espol.tareaproyectodiseniosoft.Observer.NotificadorEmail;
+import ec.edu.espol.tareaproyectodiseniosoft.Observer.NotificadorSMS;
+
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -19,46 +28,34 @@ import java.util.Scanner;
  * @author marsa
  */
 public class Main {
+
     public static void main(String[] args) {
-        ManejadorIncidente anfitrion = new AnfitrionIncidente();
-        ManejadorIncidente moderador = new ModeradorIncidente();
-        ManejadorIncidente soporteLegal = new SoporteLegalIncidente();
+        UnidadFactory habitacionFactory = new HabitacionPrivadaFactory();
+        Unidad habitacion = habitacionFactory.crearUnidad("H001", 100.0, List.of("WiFi", "TV"), LocalDate.now(), LocalDate.now().plusDays(5));
 
-        anfitrion.establecerSiguiente(moderador);
-        moderador.establecerSiguiente(soporteLegal);
+        UnidadFactory departamentoFactory = new DepartamentoFactory();
+        Unidad departamento = departamentoFactory.crearUnidad("D001", 200.0, List.of("WiFi", "Cocina"), LocalDate.now(), LocalDate.now().plusDays(10));
 
-        Scanner scanner = new Scanner(System.in);
+        UnidadFactory casaFactory = new CasaFactory();
+        Unidad casa = casaFactory.crearUnidad("C001", 300.0, List.of("WiFi", "Jardín", "Piscina"), LocalDate.now(), LocalDate.now().plusDays(15));
 
-        System.out.println("=== Sistema de Gestión de Incidentes ===");
+        // observer 
+        Reserva reserva = new Reserva("PENDIENTE");
 
-        while (true) {
-            System.out.print("\nIngrese la descripción del incidente: ");
-            String descripcion = scanner.nextLine();
+        //notificadores al fin 
+        NotificadorSMS notificadorSMS = new NotificadorSMS();
+        NotificadorEmail notificadorEmail = new NotificadorEmail();
+        NotificadorAppMensajeria notificadorApp = new NotificadorAppMensajeria();
 
-            System.out.print("Ingrese el nivel de severidad del incidente (1-10): ");
-            int nivelSeveridad = Integer.parseInt(scanner.nextLine());
+        // agregando notificadores 
+        reserva.agregarObserver(notificadorSMS);
+        reserva.agregarObserver(notificadorEmail);
+        reserva.agregarObserver(notificadorApp);
 
-            Incidente incidente = new Incidente(descripcion, nivelSeveridad);
-            System.out.println("\nProcesando incidente...");
-            anfitrion.manejarIncidente(incidente);
+        // Cambiar el estado de la reserva (esto notificará a todos los observadores)
+        reserva.cambiarEstado("CONFIRMADA");
 
-            System.out.println("\nEstado del Incidente:");
-            imprimirEstado(incidente);
-
-            System.out.print("\n¿Desea reportar otro incidente? (s/n): ");
-            String respuesta = scanner.nextLine();
-            if (!respuesta.equalsIgnoreCase("s")) {
-                break;
-            }
-        }
-
-        scanner.close();
-    }
-
-    private static void imprimirEstado(Incidente incidente) {
-        System.out.println("ID: " + incidente.getId());
-        System.out.println("Descripción: " + incidente.getDescripcion());
-        System.out.println("Nivel de Severidad: " + incidente.getNivelSeveridad());
-        System.out.println("Estado: " + (incidente.isResuelto() ? "Resuelto" : "Pendiente"));
+        // Cambiar el estado de la reserva a "FINALIZADA" (notificación para todos los observadores nuevamente)
+        reserva.cambiarEstado("FINALIZADA");
     }
 }
