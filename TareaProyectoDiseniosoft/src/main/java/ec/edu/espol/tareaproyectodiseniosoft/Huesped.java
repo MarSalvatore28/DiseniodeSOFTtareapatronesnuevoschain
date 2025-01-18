@@ -12,6 +12,7 @@ public class Huesped extends Usuario {
 
 
 
+
     public void reportarIncidente(String descripcion, ManejadorIncidente manejadorInicial, int nivelSeveridad) {
     // Crear un nuevo incidente con los datos proporcionados
     Incidente incidente = new Incidente(descripcion, nivelSeveridad);

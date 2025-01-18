@@ -3,16 +3,14 @@ package ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility;
 import ec.edu.espol.tareaproyectodiseniosoft.Incidente;
 
 public class AnfitrionIncidente extends ManejadorIncidente {
-     @Override
+    @Override
     public void manejarIncidente(Incidente incidente) {
-        if (incidente.isResuelto()) {
-            return; // Si ya está resuelto, no procesar
-        }
-        if (incidente.getNivelSeveridad() <= 3) {
-            System.out.println("Incidente manejado por el anfitrión: " + incidente.getDescripcion());
+        if (incidente.getNivelSeveridad() <= 3 && !incidente.isResuelto()) {
+            System.out.println("Incidente manejado por el anfitrión.");
             incidente.setResuelto(true);
-        } else if (siguiente != null) {
-            siguiente.manejarIncidente(incidente);
+        } else {
+            System.out.println("El anfitrión no pudo manejar el incidente. Escalando...");
+            escalarIncidente(incidente);
         }
     }
 }

@@ -1,5 +1,7 @@
 package ec.edu.espol.tareaproyectodiseniosoft;
 
+import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.ManejadorIncidente;
+
 public class Usuario {
     private String id;
     private String nombre;
@@ -20,6 +22,14 @@ public class Usuario {
         return id;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -33,5 +43,9 @@ public class Usuario {
     }
     
 
+
+    void reportarIncidente(String incidente_menor, ManejadorIncidente anfitrion, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }
