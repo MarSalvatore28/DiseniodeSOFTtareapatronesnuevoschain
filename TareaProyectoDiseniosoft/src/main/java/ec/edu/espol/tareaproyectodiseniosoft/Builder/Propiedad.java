@@ -13,51 +13,41 @@ import java.util.List;
 
 /**
  *
- * @author DHAMAR
+ * @author Marcitou
  */
 public class Propiedad {
-    private String id;
-    private String nombre;
-    private String direccion;
-    private List<String> reglas;
-    private List<Unidad> unidades;
-    private Usuario anfitrion;
-    
-    public Propiedad(String id, String nombre, String direccion, List<String> reglas, List<Unidad> unidades, Usuario anfitrion) {
-        this.id = id;
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.reglas = reglas;
-        this.unidades = unidades;
-        this.anfitrion = anfitrion;
-    }
-    
-    public void agregarUnidad(Unidad unidad) {
-        unidades.add(unidad);
+    String id;
+    String nombre;
+    String direccion;
+    List<String> reglas;
+    List<Unidad> unidades;
+    Usuario anfitrion;
+
+    Propiedad() {} // Constructor privado para restringir acceso
+
+    // Getters
+    public String getId() {
+        return id;
     }
 
-    public void agregarRegla(String regla) {
-        reglas.add(regla);
+    public String getNombre() {
+        return nombre;
     }
 
-    public List<Unidad> buscarUnidadesDisponibles(LocalDate fechaInicio, LocalDate fechaFin) {
-        List<Unidad> disponibles = new ArrayList<>();
-        for (Unidad unidad : unidades) {
-            if (unidad.estaDisponible(fechaInicio, fechaFin)) {
-                disponibles.add(unidad);
-            }
-        }
-        return disponibles;
+    public String getDireccion() {
+        return direccion;
     }
-    
-    public List<Unidad> verificarDisponibilidad() {
-        List<Unidad> disponibles = new ArrayList<>();
-        for (Unidad unidad : unidades) {
-            if (unidad.getEstado() == EstadoUnidad.DISPONIBLE) {
-                disponibles.add(unidad);
-            }
-        }
-        return disponibles;
+
+    public List<String> getReglas() {
+        return reglas;
+    }
+
+    public List<Unidad> getUnidades() {
+        return unidades;
+    }
+
+    public Usuario getAnfitrion() {
+        return anfitrion;
     }
 
 }
