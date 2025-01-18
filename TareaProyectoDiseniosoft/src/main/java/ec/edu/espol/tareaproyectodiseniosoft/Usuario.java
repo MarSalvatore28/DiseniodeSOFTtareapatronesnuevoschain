@@ -39,6 +39,11 @@ public class Usuario {
         System.out.println("Notificación para " + nombre + ": " + mensaje);
     }
     
+     @Override
+    public String toString() {
+        return "Usuario{" + "id='" + id + '\'' + ", nombre='" + nombre + '\'' + '}';
+    }
+    
 
 
     void reportarIncidente(String incidente_menor, ManejadorIncidente anfitrion, int i) {
