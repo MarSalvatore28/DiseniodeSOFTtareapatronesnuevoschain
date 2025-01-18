@@ -15,78 +15,17 @@ import java.util.List;
  */
 public class Unidad {
     private String id;
-    private EstadoUnidad estado;
-    private Double precio;
-    private List<String> servicios;
-    private LocalDate fechaDisponibleDesde;
-    private LocalDate fechaDisponibleHasta;
 
-    public Unidad(String id, EstadoUnidad estado, Double precio, List<String> servicios, LocalDate fechaDisponibleDesde, LocalDate fechaDisponibleHasta) {
+    public Unidad(String id) {
         this.id = id;
-        this.estado = estado;
-        this.precio = precio;
-        this.servicios = servicios;
-        this.fechaDisponibleDesde = fechaDisponibleDesde;
-        this.fechaDisponibleHasta = fechaDisponibleHasta;
-    }
-    
-    public boolean estaDisponible(LocalDate fechaInicio, LocalDate fechaFin) {
-        return estado == EstadoUnidad.DISPONIBLE &&
-               !fechaInicio.isBefore(fechaDisponibleDesde) &&
-               !fechaFin.isAfter(fechaDisponibleHasta);
-    }
-    
-    
-    
-    public void reservar() {
-        this.estado = EstadoUnidad.RESERVADA;
     }
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public Double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(Double precio) {
-        this.precio = precio;
-    }
-
-    public List<String> getServicios() {
-        return servicios;
-    }
-
-    public void setServicios(List<String> servicios) {
-        this.servicios = servicios;
-    }
-
-    public LocalDate getFechaDisponibleDesde() {
-        return fechaDisponibleDesde;
-    }
-
-    public void setFechaDisponibleDesde(LocalDate fechaDisponibleDesde) {
-        this.fechaDisponibleDesde = fechaDisponibleDesde;
-    }
-
-    public LocalDate getFechaDisponibleHasta() {
-        return fechaDisponibleHasta;
-    }
-
-    public void setFechaDisponibleHasta(LocalDate fechaDisponibleHasta) {
-        this.fechaDisponibleHasta = fechaDisponibleHasta;
-    }
-
-    public EstadoUnidad getEstado() {
-        return estado;
-    }
-
-    public void actualizarEstado(EstadoUnidad nuevoEstado) {
-        this.estado = nuevoEstado;
+    public boolean estaDisponible() {
+        // Lógica de disponibilidad
+        return true; // Simulación
     }
 }
