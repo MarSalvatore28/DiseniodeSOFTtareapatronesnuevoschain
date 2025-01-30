@@ -49,5 +49,25 @@ public class Propiedad {
     public Usuario getAnfitrion() {
         return anfitrion;
     }
+    public boolean agregarRegla(String regla) {
+        if (!reglas.contains(regla)) {
+            reglas.add(regla);
+            return true;
+        }
+        return false;
+    }
+    public boolean eliminarRegla(String regla) {
+        return reglas.remove(regla);
+    }
+    public boolean agregarUnidad(Unidad unidad) {
+        if (!unidades.contains(unidad)) {
+            unidades.add(unidad);
+            return true;
+        }
+        return false;
+    }
+    public boolean eliminarUnidad(Unidad unidad) {
+        return unidades.remove(unidad);
+    }
 
 }
