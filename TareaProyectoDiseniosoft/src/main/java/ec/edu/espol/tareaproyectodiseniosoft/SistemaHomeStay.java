@@ -1,19 +1,19 @@
 package ec.edu.espol.tareaproyectodiseniosoft;
 
-import ec.edu.espol.tareaproyectodiseniosoft.Observer.Notificador;
 import ec.edu.espol.tareaproyectodiseniosoft.Builder.Propiedad;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
+import ec.edu.espol.tareaproyectodiseniosoft.Observer.Observer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 
 public class SistemaHomeStay {
-     private Notificador notificador;
+     private Observer notificador;
 
     public SistemaHomeStay() {
     }
 
-    public SistemaHomeStay(Notificador notificador) {
+    public SistemaHomeStay(Observer notificador) {
         this.notificador = notificador;
     }
 
@@ -45,10 +45,10 @@ public class SistemaHomeStay {
         boolean resultado = metodo.procesar(monto);
         if (resultado) {
            // reserva.setEstado(EstadoPago.COMPLETO);
-            notificador.enviarNotificacion(reserva.getHuesped().getEmail(), "Pago completado.");
+            notificador.actualizar(""+reserva.getHuesped().getEmail()+ "Pago completado.");
         } else {
             //reserva.setEstado(EstadoPago.FALLIDO);
-            notificador.enviarNotificacion(reserva.getHuesped().getEmail(), "Pago fallido.");
+            notificador.actualizar(reserva.getHuesped().getEmail()+",Pago fallido.");
         }
         return resultado;
     }
