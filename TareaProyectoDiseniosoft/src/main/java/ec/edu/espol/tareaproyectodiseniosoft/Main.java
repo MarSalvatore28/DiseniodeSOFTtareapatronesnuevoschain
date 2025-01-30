@@ -22,6 +22,7 @@ import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.CasaFactory;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.DepartamentoFactory;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.HabitacionPrivadaFactory;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.UnidadData;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.UnidadFactory;
 import ec.edu.espol.tareaproyectodiseniosoft.Observer.NotificadorAppMensajeria;
 import ec.edu.espol.tareaproyectodiseniosoft.Observer.NotificadorEmail;
@@ -97,13 +98,17 @@ public class Main {
         
         //factory
         UnidadFactory habitacionFactory = new HabitacionPrivadaFactory();
-        Unidad habitacion = habitacionFactory.crearUnidad("H001", 100.0, List.of("WiFi", "TV"), LocalDate.now(), LocalDate.now().plusDays(5));
+        UnidadData parametros = new UnidadData("H001",100.0, List.of("WiFi", "TV"),LocalDate.now(), LocalDate.now().plusDays(5));
+
+        Unidad habitacion = habitacionFactory.crearUnidad(parametros);
 
         UnidadFactory departamentoFactory = new DepartamentoFactory();
-        Unidad departamento = departamentoFactory.crearUnidad("D001", 200.0, List.of("WiFi", "Cocina"), LocalDate.now(), LocalDate.now().plusDays(10));
+        UnidadData parametros1 = new UnidadData("D001", 200.0, List.of("WiFi", "Cocina"), LocalDate.now(), LocalDate.now().plusDays(10));
+        Unidad departamento = departamentoFactory.crearUnidad(parametros1);
 
         UnidadFactory casaFactory = new CasaFactory();
-        Unidad casa1 = casaFactory.crearUnidad("C001", 300.0, List.of("WiFi", "Jardín", "Piscina"), LocalDate.now(), LocalDate.now().plusDays(15));
+        UnidadData parametros2 = new UnidadData("C001", 300.0, List.of("WiFi", "Jardín", "Piscina"), LocalDate.now(), LocalDate.now().plusDays(15));
+        Unidad casa1 = casaFactory.crearUnidad(parametros2);
 
         
         
