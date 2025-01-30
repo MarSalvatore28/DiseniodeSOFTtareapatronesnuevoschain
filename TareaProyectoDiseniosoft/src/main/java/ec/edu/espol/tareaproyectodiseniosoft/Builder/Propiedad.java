@@ -22,7 +22,7 @@ public class Propiedad {
     List<String> reglas;
     List<Unidad> unidades;
     Usuario anfitrion;
-
+    String tipo;
     Propiedad() {} // Constructor privado para restringir acceso
 
     // Getters
