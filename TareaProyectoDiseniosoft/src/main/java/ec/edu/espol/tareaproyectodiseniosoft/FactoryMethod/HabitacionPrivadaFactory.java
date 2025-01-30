@@ -9,8 +9,9 @@ public class HabitacionPrivadaFactory extends UnidadFactory {
 
     @Override
     public Unidad crearUnidad(String id, Double precio, List<String> servicios, LocalDate fechaDisponibleDesde, LocalDate fechaDisponibleHasta) {
-        // Aquí puedes agregar características predeterminadas para una habitación privada si es necesario.
-        return new Unidad(id, EstadoUnidad.DISPONIBLE, precio, servicios, fechaDisponibleDesde, fechaDisponibleHasta);
+        UnidadCaracteristicas caracteristicas = new UnidadCaracteristicas(precio, servicios);
+        UnidadDisponibilidad disponibilidad = new UnidadDisponibilidad(fechaDisponibleDesde, fechaDisponibleHasta);
+        return new Unidad(id, EstadoUnidad.DISPONIBLE, disponibilidad, caracteristicas);
     }
-
 }
+

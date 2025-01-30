@@ -16,25 +16,22 @@ import java.util.List;
 public class Unidad {
     private String id;
     private EstadoUnidad estado;
-    private Double precio;
-    private List<String> servicios;
-    private LocalDate fechaDisponibleDesde;
-    private LocalDate fechaDisponibleHasta;
+    private UnidadDisponibilidad disponibilidad;
+    private UnidadCaracteristicas caracteristicas;
+    
 
-    public Unidad(String id, EstadoUnidad estado, Double precio, List<String> servicios, LocalDate fechaDisponibleDesde, LocalDate fechaDisponibleHasta) {
+    public Unidad(String id, EstadoUnidad estado, UnidadDisponibilidad disponibilidad, UnidadCaracteristicas caracteristicas) {
         this.id = id;
         this.estado = estado;
-        this.precio = precio;
-        this.servicios = servicios;
-        this.fechaDisponibleDesde = fechaDisponibleDesde;
-        this.fechaDisponibleHasta = fechaDisponibleHasta;
-    }
+        this.disponibilidad = disponibilidad;
+        this.caracteristicas = caracteristicas;
     
-    public boolean estaDisponible(LocalDate fechaInicio, LocalDate fechaFin) {
-        return estado == EstadoUnidad.DISPONIBLE &&
-               !fechaInicio.isBefore(fechaDisponibleDesde) &&
-               !fechaFin.isAfter(fechaDisponibleHasta);
     }
+    public boolean estaDisponible(LocalDate fechaInicio, LocalDate fechaFin) {
+        return estado == EstadoUnidad.DISPONIBLE && disponibilidad.estaDisponible(fechaInicio, fechaFin);
+    }
+
+    
     public Unidad(String id) {
         this.id = id;
     }
@@ -53,35 +50,35 @@ public class Unidad {
     }
 
     public Double getPrecio() {
-        return precio;
+        return this.caracteristicas.getPrecio();
     }
 
     public void setPrecio(Double precio) {
-        this.precio = precio;
+        this.caracteristicas.setPrecio(precio);
     }
 
     public List<String> getServicios() {
-        return servicios;
+        return this.caracteristicas.getServicios();
     }
 
     public void setServicios(List<String> servicios) {
-        this.servicios = servicios;
+        this.caracteristicas.setServicios(servicios);;
     }
 
     public LocalDate getFechaDisponibleDesde() {
-        return fechaDisponibleDesde;
+        return this.disponibilidad.getFechaDisponibleDesde();
     }
 
     public void setFechaDisponibleDesde(LocalDate fechaDisponibleDesde) {
-        this.fechaDisponibleDesde = fechaDisponibleDesde;
+        this.disponibilidad.setFechaDisponibleDesde(fechaDisponibleDesde);;
     }
 
     public LocalDate getFechaDisponibleHasta() {
-        return fechaDisponibleHasta;
+        return this.disponibilidad.getFechaDisponibleHasta();
     }
 
     public void setFechaDisponibleHasta(LocalDate fechaDisponibleHasta) {
-        this.fechaDisponibleHasta = fechaDisponibleHasta;
+        this.disponibilidad.setFechaDisponibleHasta(fechaDisponibleHasta);;
     }
 
     public EstadoUnidad getEstado() {
