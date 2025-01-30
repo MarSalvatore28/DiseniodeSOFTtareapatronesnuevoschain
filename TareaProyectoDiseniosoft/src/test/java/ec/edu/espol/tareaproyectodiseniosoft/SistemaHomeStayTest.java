@@ -49,7 +49,16 @@ public class SistemaHomeStayTest {
         assertFalse(resultado);
     }
     
-    
+    @Test
+    void testProcesarPagoExitoso() {
+        Date inicio = new Date();
+        Date fin = new Date(inicio.getTime() + 86400000);
+        Reserva reserva = sistema.crearReserva(huesped, unidad, inicio, fin);
+        MetodoPago metodoPago = new TarjetaCredit();
+        
+        boolean resultado = sistema.procesarPago(reserva, metodoPago, 100.0);
+        assertTrue(resultado);
+    }
     
     
     

@@ -19,7 +19,7 @@ import org.junit.jupiter.api.BeforeEach;
  */
 public class HuespedTest {
     
-     private Huesped huesped;
+    private Huesped huesped;
     private SistemaHomeStay sistema;
     private Unidad unidad;
     
