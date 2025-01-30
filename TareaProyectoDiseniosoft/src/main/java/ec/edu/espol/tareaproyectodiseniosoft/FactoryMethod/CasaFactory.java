@@ -8,10 +8,11 @@ import ec.edu.espol.tareaproyectodiseniosoft.EstadoUnidad;
 public class CasaFactory extends UnidadFactory {
 
     @Override
-    public Unidad crearUnidad(String id, Double precio, List<String> servicios, LocalDate fechaDisponibleDesde, LocalDate fechaDisponibleHasta) {
-        UnidadCaracteristicas caracteristicas = new UnidadCaracteristicas(precio, servicios);
-        UnidadDisponibilidad disponibilidad = new UnidadDisponibilidad(fechaDisponibleDesde, fechaDisponibleHasta);
-        return new Unidad(id, EstadoUnidad.DISPONIBLE, disponibilidad, caracteristicas);
+    public Unidad crearUnidad(UnidadData data) {
+        UnidadCaracteristicas caracteristicas = new UnidadCaracteristicas(data.getPrecio(), data.getServicios());
+        UnidadDisponibilidad disponibilidad = new UnidadDisponibilidad(data.getFechaDisponibleDesde(), data.getFechaDisponibleHasta());
+        return new Unidad(data.getId(), EstadoUnidad.DISPONIBLE, disponibilidad, caracteristicas);
     }
 }
+
 
