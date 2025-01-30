@@ -55,15 +55,15 @@ public class ReservaTest {
     
     @Test
     void testCambiarEstado2() {
-        Reserva reserva = new Reserva("PENDIENTE");
-        reserva.cambiarEstado("CONFIRMADA");
-        assertEquals("CONFIRMADA", reserva.getEstado());
+        Reserva reserva = new Reserva(EstadoReserva.PENDIENTE);
+        reserva.cambiarEstado(EstadoReserva.CONFIRMADA);
+        assertEquals("CONFIRMADA", reserva.getEstado().toString());
     }
     
     @Test
     void testEstadoInvalido() {
-        Reserva reserva = new Reserva("PENDIENTE");
-        reserva.cambiarEstado("INVALIDO");
+        Reserva reserva = new Reserva(EstadoReserva.PENDIENTE);
+        reserva.cambiarEstado(EstadoReserva.INVALIDO);
         assertNotEquals("INVALIDO", reserva.getEstado()); // Simulación de validación
     }
    
