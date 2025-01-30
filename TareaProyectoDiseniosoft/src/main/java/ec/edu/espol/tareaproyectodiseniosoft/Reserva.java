@@ -21,17 +21,17 @@ public class Reserva implements Subject {  // Implementar la interfaz Sujeto
     private Huesped huesped;
     private Unidad unidad;
     private List<Observer> observers = new ArrayList<>();
-    private String estado;
+    private EstadoReserva estado;
 
     public Reserva(Huesped huesped, Unidad unidad, Date fechaInicio, Date fechaFin) {
         this.huesped = huesped;
         this.unidad = unidad;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.estado = "PENDIENTE"; // Estado inicial
+        this.estado = EstadoReserva.PENDIENTE; // Estado inicial
     }
 
-    public Reserva(String estadoInicial) {
+    public Reserva(EstadoReserva estadoInicial) {
         this.estado = estadoInicial;
     }
 
@@ -43,11 +43,11 @@ public class Reserva implements Subject {  // Implementar la interfaz Sujeto
         return unidad;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(EstadoReserva estado) {
         this.estado = estado;
     }
 
-    public String getEstado() {
+    public EstadoReserva getEstado() {
         return estado;
     }
 
@@ -59,7 +59,7 @@ public class Reserva implements Subject {  // Implementar la interfaz Sujeto
         return fechaFin;
     }
 
-    public void cambiarEstado(String nuevoEstado) {
+    public void cambiarEstado(EstadoReserva nuevoEstado) {
         this.estado = nuevoEstado;
         notificarObservers("El estado de la reserva ha cambiado a: " + nuevoEstado);
     }

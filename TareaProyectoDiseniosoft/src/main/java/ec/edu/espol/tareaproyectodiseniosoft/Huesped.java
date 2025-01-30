@@ -7,7 +7,8 @@ import ec.edu.espol.tareaproyectodiseniosoft.Observer.Observer;
 import java.util.Date;
 
 public class Huesped extends Usuario implements Observer {
-
+    SistemaHomeStay sistema = new SistemaHomeStay();
+    
     public Huesped(String id, String nombre, String email) {
         super(id, nombre, email);
     }
@@ -27,14 +28,8 @@ public class Huesped extends Usuario implements Observer {
     }
 }
 
-    public void realizarReserva(SistemaHomeStay sistema, Unidad unidad, Date fechaInicio, Date fechaFin, MetodoPago metodo, double monto) {
-        Reserva reserva = sistema.crearReserva(this, unidad, fechaInicio, fechaFin);
-        if (unidad.getEstado() == EstadoUnidad.DISPONIBLE) {
-            unidad.actualizarEstado(EstadoUnidad.RESERVADA);
-            sistema.procesarPago(reserva, metodo, monto);
-        } else {
-            System.out.println("Unidad no disponible.");
-        }
+    public void solicitarReserva(Huesped huesped, Unidad unidad, Date fechaInicio, Date fechaFin, MetodoPago metodo, double monto) {
+        sistema.realizarReserva(huesped, unidad, fechaInicio, fechaFin, metodo, monto);
     }
 
     // Sobrescribe el método de notificación para personalizar el mensaje
