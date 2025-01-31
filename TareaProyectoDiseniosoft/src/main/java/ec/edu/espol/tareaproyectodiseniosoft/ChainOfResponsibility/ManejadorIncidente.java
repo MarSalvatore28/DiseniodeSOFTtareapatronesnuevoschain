@@ -10,7 +10,7 @@ public abstract class ManejadorIncidente {
     }
     public abstract boolean puedeManejar(Incidente incidente);
 
-    protected abstract void manejarIncidente(Incidente incidente);
+    public abstract void manejarIncidente(Incidente incidente);
     
     
     protected void escalarIncidente(Incidente incidente) {
