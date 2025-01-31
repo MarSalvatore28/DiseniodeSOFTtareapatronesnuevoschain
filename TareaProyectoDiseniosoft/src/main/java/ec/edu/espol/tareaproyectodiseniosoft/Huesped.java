@@ -43,3 +43,4 @@ public class Huesped extends Usuario implements Observer {
         recibirNotificacion(mensaje);
     }
 }
+

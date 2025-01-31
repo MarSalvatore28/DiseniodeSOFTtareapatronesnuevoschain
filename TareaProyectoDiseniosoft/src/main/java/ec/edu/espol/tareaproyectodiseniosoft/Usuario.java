@@ -44,11 +44,5 @@ public class Usuario {
         return "Usuario{" + "id='" + id + '\'' + ", nombre='" + nombre + '\'' + '}';
     }
     
-
-
-    void reportarIncidente(String incidente_menor, ManejadorIncidente anfitrion, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
     
 }
