@@ -6,6 +6,7 @@ package ec.edu.espol.tareaproyectodiseniosoft;
 
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
 import ec.edu.espol.tareaproyectodiseniosoft.Observer.Observer;
+import java.time.LocalDate;
 import java.util.Date;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
@@ -20,8 +21,8 @@ public class ReservaTest {
     void testCrearReserva() {
         Huesped huesped = new Huesped("1", "Juan", "juan@example.com");
         Unidad unidad = new Unidad("U001");
-        Date fechaInicio = new Date();
-        Date fechaFin = new Date();
+        LocalDate fechaInicio = LocalDate.now();
+        LocalDate fechaFin = LocalDate.of(2025, 1, 30);
 
         Reserva reserva = new Reserva(huesped, unidad, fechaInicio, fechaFin);
 
@@ -32,8 +33,8 @@ public class ReservaTest {
     void testCrearReservaWithNull() {
         Huesped huesped = new Huesped("1", "Juan", "juan@example.com");
         Unidad unidad = new Unidad(null);
-        Date fechaInicio = new Date();
-        Date fechaFin = new Date();
+        LocalDate fechaInicio = LocalDate.now();
+        LocalDate fechaFin = LocalDate.of(2025, 1, 30);
 
         Reserva reserva = new Reserva(huesped, unidad, fechaInicio, fechaFin);
 
@@ -44,8 +45,8 @@ public class ReservaTest {
     void testCrearReserva3() {
         Huesped huesped = new Huesped("", "Juan", "juan@example.com");
         Unidad unidad = new Unidad("001");
-        Date fechaInicio = new Date();
-        Date fechaFin = new Date();
+        LocalDate fechaInicio = LocalDate.now();
+        LocalDate fechaFin = LocalDate.of(2025, 1, 30);
 
         Reserva reserva = new Reserva(huesped, unidad, fechaInicio, fechaFin);
 

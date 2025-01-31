@@ -3,6 +3,7 @@ package ec.edu.espol.tareaproyectodiseniosoft;
 import ec.edu.espol.tareaproyectodiseniosoft.Builder.Propiedad;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
 import ec.edu.espol.tareaproyectodiseniosoft.Observer.Observer;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
@@ -22,7 +23,7 @@ public class SistemaHomeStay {
         return new ArrayList<>();
     }
     
-    public Reserva realizarReserva(Huesped huesped, Unidad unidad, Date fechaInicio, Date fechaFin, MetodoPago metodo, double monto) {
+    public Reserva realizarReserva(Huesped huesped, Unidad unidad, LocalDate fechaInicio, LocalDate fechaFin, MetodoPago metodo, double monto) {
         if (unidad.getEstado() == EstadoUnidad.DISPONIBLE) {
             Reserva reserva = crearReserva(huesped, unidad, fechaInicio, fechaFin);
             unidad.actualizarEstado(EstadoUnidad.RESERVADA);
@@ -35,7 +36,7 @@ public class SistemaHomeStay {
     }
 
 
-    public Reserva crearReserva(Huesped huesped, Unidad unidad, java.util.Date fechaInicio, java.util.Date fechaFin) {
+    public Reserva crearReserva(Huesped huesped, Unidad unidad, LocalDate fechaInicio, LocalDate fechaFin) {
         System.out.println("Creando reserva para el huésped: " + huesped.getNombre());
         return new Reserva(huesped, unidad, fechaInicio, fechaFin);
     }

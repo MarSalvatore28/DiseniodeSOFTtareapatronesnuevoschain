@@ -2,6 +2,8 @@ package ec.edu.espol.tareaproyectodiseniosoft;
 
 import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.ManejadorIncidente;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.UnidadCaracteristicas;
+import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.UnidadDisponibilidad;
 import ec.edu.espol.tareaproyectodiseniosoft.Observer.Observer;
 
 import java.util.Date;
@@ -28,8 +30,8 @@ public class Huesped extends Usuario implements Observer {
     }
 }
 
-    public void solicitarReserva(Huesped huesped, Unidad unidad, Date fechaInicio, Date fechaFin, MetodoPago metodo, double monto) {
-        sistema.realizarReserva(huesped, unidad, fechaInicio, fechaFin, metodo, monto);
+    public void solicitarReserva(Huesped huesped, Unidad unidad, UnidadDisponibilidad tiempo, UnidadCaracteristicas caract, MetodoPago metodo) {
+        sistema.realizarReserva(huesped, unidad, tiempo.getFechaDisponibleDesde(), tiempo.getFechaDisponibleHasta(), metodo, caract.getPrecio());
     }
 
     // Sobrescribe el método de notificación para personalizar el mensaje

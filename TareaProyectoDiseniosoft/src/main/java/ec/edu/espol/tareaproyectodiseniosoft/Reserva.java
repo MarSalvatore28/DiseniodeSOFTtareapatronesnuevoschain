@@ -5,6 +5,7 @@ import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
 import ec.edu.espol.tareaproyectodiseniosoft.Observer.Observer;
 import ec.edu.espol.tareaproyectodiseniosoft.Observer.Subject;
 import ec.edu.espol.tareaproyectodiseniosoft.Huesped;
+import java.time.LocalDate;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,14 +17,14 @@ import java.util.List;
  */
 public class Reserva implements Subject {  // Implementar la interfaz Sujeto
     private int id;
-    private Date fechaInicio;
-    private Date fechaFin;
+    private LocalDate fechaInicio;
+    private LocalDate fechaFin;
     private Huesped huesped;
     private Unidad unidad;
     private List<Observer> observers = new ArrayList<>();
     private EstadoReserva estado;
 
-    public Reserva(Huesped huesped, Unidad unidad, Date fechaInicio, Date fechaFin) {
+    public Reserva(Huesped huesped, Unidad unidad, LocalDate fechaInicio, LocalDate fechaFin) {
         this.huesped = huesped;
         this.unidad = unidad;
         this.fechaInicio = fechaInicio;
@@ -51,13 +52,23 @@ public class Reserva implements Subject {  // Implementar la interfaz Sujeto
         return estado;
     }
 
-    public Date getFechaInicio() {
+    public LocalDate getFechaInicio() {
         return fechaInicio;
     }
 
-    public Date getFechaFin() {
+    public void setFechaInicio(LocalDate fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public LocalDate getFechaFin() {
         return fechaFin;
     }
+
+    public void setFechaFin(LocalDate fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+
+ 
 
     public void cambiarEstado(EstadoReserva nuevoEstado) {
         this.estado = nuevoEstado;
