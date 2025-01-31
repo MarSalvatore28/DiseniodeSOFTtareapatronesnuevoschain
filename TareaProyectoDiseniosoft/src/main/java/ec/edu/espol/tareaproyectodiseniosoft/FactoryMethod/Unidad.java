@@ -27,6 +27,7 @@ public class Unidad {
         this.caracteristicas = caracteristicas;
     
     }
+    
     public boolean estaDisponible(LocalDate fechaInicio, LocalDate fechaFin) {
         return estado == EstadoUnidad.DISPONIBLE && disponibilidad.estaDisponible(fechaInicio, fechaFin);
     }

@@ -13,7 +13,7 @@ public class AnfitrionIncidente extends ManejadorIncidente {
         incidente.setResuelto(true);
     }
     @Override
-    protected void manejarIncidente(Incidente incidente){
+    public void manejarIncidente(Incidente incidente){
         if (puedeManejar(incidente)) {
             resolverIncidente(incidente);
         } else {

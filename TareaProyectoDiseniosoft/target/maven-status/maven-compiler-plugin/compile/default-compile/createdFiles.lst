@@ -10,11 +10,15 @@ ec\edu\espol\tareaproyectodiseniosoft\Main.class
 ec\edu\espol\tareaproyectodiseniosoft\FactoryMethod\CasaFactory.class
 ec\edu\espol\tareaproyectodiseniosoft\Builder\CasaBuilder.class
 ec\edu\espol\tareaproyectodiseniosoft\Builder\VillaBuilder.class
+ec\edu\espol\tareaproyectodiseniosoft\EstadoReserva.class
+ec\edu\espol\tareaproyectodiseniosoft\FactoryMethod\UnidadCaracteristicas.class
 ec\edu\espol\tareaproyectodiseniosoft\Observer\Subject.class
+ec\edu\espol\tareaproyectodiseniosoft\FactoryMethod\UnidadDisponibilidad.class
 ec\edu\espol\tareaproyectodiseniosoft\Builder\ApartamentoBuilder.class
 ec\edu\espol\tareaproyectodiseniosoft\Builder\Propiedad.class
 ec\edu\espol\tareaproyectodiseniosoft\Observer\EmailNotificador.class
 ec\edu\espol\tareaproyectodiseniosoft\Builder\DirectorPropiedad.class
+ec\edu\espol\tareaproyectodiseniosoft\Builder\AbstractBuilder.class
 ec\edu\espol\tareaproyectodiseniosoft\Incidente.class
 ec\edu\espol\tareaproyectodiseniosoft\FactoryMethod\UnidadFactory.class
 ec\edu\espol\tareaproyectodiseniosoft\ChainOfResponsibility\ManejadorIncidente.class
@@ -23,8 +27,8 @@ ec\edu\espol\tareaproyectodiseniosoft\ChainOfResponsibility\AnfitrionIncidente.c
 ec\edu\espol\tareaproyectodiseniosoft\FactoryMethod\HabitacionPrivadaFactory.class
 ec\edu\espol\tareaproyectodiseniosoft\Reserva.class
 ec\edu\espol\tareaproyectodiseniosoft\FactoryMethod\Unidad.class
-ec\edu\espol\tareaproyectodiseniosoft\Observer\Notificador.class
 ec\edu\espol\tareaproyectodiseniosoft\ChainOfResponsibility\ModeradorIncidente.class
+ec\edu\espol\tareaproyectodiseniosoft\FactoryMethod\UnidadData.class
 ec\edu\espol\tareaproyectodiseniosoft\Builder\Builder.class
 ec\edu\espol\tareaproyectodiseniosoft\Observer\NotificadorAppMensajeria.class
 ec\edu\espol\tareaproyectodiseniosoft\Observer\NotificadorSMS.class

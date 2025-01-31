@@ -49,17 +49,17 @@ public class Main {
         Builder villaBuilder = new VillaBuilder();
 
         // Construir y mostrar un apartamento
-        director.construirApartamento(apartamentoBuilder);
+        director.construirApartamento((ApartamentoBuilder) apartamentoBuilder);
         Propiedad apartamento = apartamentoBuilder.build();
         System.out.println("Apartamento creado: " + apartamento.getNombre() + " en " + apartamento.getDireccion());
 
         // Construir y mostrar una casa
-        director.construirCasa(casaBuilder);
+        director.construirCasa((CasaBuilder) casaBuilder);
         Propiedad casa = casaBuilder.build();
         System.out.println("Casa creada: " + casa.getNombre() + " en " + casa.getDireccion());
 
         // Construir y mostrar una villa
-        director.construirVilla(villaBuilder);
+        director.construirVilla((VillaBuilder) villaBuilder);
         Propiedad villa = villaBuilder.build();
         System.out.println("Villa creada: " + villa.getNombre() + " en " + villa.getDireccion());
 

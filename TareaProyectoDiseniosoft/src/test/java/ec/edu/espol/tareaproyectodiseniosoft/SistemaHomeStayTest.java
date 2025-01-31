@@ -6,8 +6,8 @@ package ec.edu.espol.tareaproyectodiseniosoft;
 
 import ec.edu.espol.tareaproyectodiseniosoft.Builder.Propiedad;
 import ec.edu.espol.tareaproyectodiseniosoft.FactoryMethod.Unidad;
-import ec.edu.espol.tareaproyectodiseniosoft.Observer.Notificador;
 import ec.edu.espol.tareaproyectodiseniosoft.Observer.NotificadorEmail;
+import ec.edu.espol.tareaproyectodiseniosoft.Observer.Observer;
 import java.util.Date;
 import java.util.List;
 import org.junit.jupiter.api.Test;
@@ -24,7 +24,7 @@ public class SistemaHomeStayTest {
     Huesped huesped;
      @BeforeEach
     void setUp() {
-        sistema = new SistemaHomeStay((Notificador) new NotificadorEmail());
+        sistema = new SistemaHomeStay((Observer) new NotificadorEmail());
         huesped = new Huesped("2", "Carlos", "carlos@example.com");
         unidad = new Unidad("U002");
     }
@@ -42,7 +42,7 @@ public class SistemaHomeStayTest {
     
     @Test
     void testPagoFallido() {
-        Reserva reserva = new Reserva("PENDIENTE");
+        Reserva reserva = new Reserva(EstadoReserva.PENDIENTE);
         MetodoPago metodo = monto -> false; // Simulación de pago fallido
 
         boolean resultado = sistema.procesarPago(reserva, metodo, 100.0);

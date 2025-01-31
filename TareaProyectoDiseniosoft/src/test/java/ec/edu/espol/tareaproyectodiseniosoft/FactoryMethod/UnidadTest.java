@@ -22,11 +22,12 @@ import java.time.LocalDate;
 public class UnidadTest {
     Unidad unidad;
     @BeforeEach
+            
     void setUp() {
-        unidad = new Unidad("U001", EstadoUnidad.DISPONIBLE, 100.0,
-            Arrays.asList("WiFi", "TV"), 
-            LocalDate.now(), 
+        UnidadDisponibilidad fechas = new UnidadDisponibilidad(LocalDate.now(), 
             LocalDate.now().plusDays(30));
+        UnidadCaracteristicas datos = new UnidadCaracteristicas(200.0, Arrays.asList("WiFi", "TV"));
+        unidad = new Unidad("U001", EstadoUnidad.DISPONIBLE, fechas,datos);
     }   
     
     @Test
