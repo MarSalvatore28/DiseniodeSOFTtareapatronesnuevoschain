@@ -1,12 +1,14 @@
 package ec.edu.espol.tareaproyectodiseniosoft.Observer;
 
-import ec.edu.espol.tareaproyectodiseniosoft.Observer.Notificador;
 
-public class EmailNotificador implements Notificador {
+
+public class EmailNotificador implements Observer {
+
     @Override
-    public void enviarNotificacion(String destinatario, String mensaje) {
-        System.out.println("Enviando email a " + destinatario + ": " + mensaje);
+    public void actualizar(String mensaje) {
+        System.out.println("Enviando correo electrónico: " + mensaje);
     }
+    
 
 
 }

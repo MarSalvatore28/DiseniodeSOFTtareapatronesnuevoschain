@@ -13,7 +13,6 @@ import ec.edu.espol.tareaproyectodiseniosoft.Builder.VillaBuilder;
 import ec.edu.espol.tareaproyectodiseniosoft.Builder.DirectorPropiedad;
 import ec.edu.espol.tareaproyectodiseniosoft.Builder.Builder;
 import ec.edu.espol.tareaproyectodiseniosoft.Observer.EmailNotificador;
-import ec.edu.espol.tareaproyectodiseniosoft.Observer.Notificador;
 import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.ManejadorIncidente;
 import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.ModeradorIncidente;
 import ec.edu.espol.tareaproyectodiseniosoft.ChainOfResponsibility.SoporteLegalIncidente;
@@ -114,7 +113,7 @@ public class Main {
         
         
         // observer 
-        Reserva reserva = new Reserva("PENDIENTE");
+        Reserva reserva = new Reserva(EstadoReserva.PENDIENTE);
 
         //notificadores al fin 
         NotificadorSMS notificadorSMS = new NotificadorSMS();
@@ -127,9 +126,9 @@ public class Main {
         reserva.agregarObserver(notificadorApp);
 
         // Cambiar el estado de la reserva (esto notificará a todos los observadores)
-        reserva.cambiarEstado("CONFIRMADA");
+        reserva.cambiarEstado(EstadoReserva.CONFIRMADA);
 
         // Cambiar el estado de la reserva a "FINALIZADA" (notificación para todos los observadores nuevamente)
-        reserva.cambiarEstado("FINALIZADA");
+        reserva.cambiarEstado(EstadoReserva.FINALIZADA);
     }
 }
