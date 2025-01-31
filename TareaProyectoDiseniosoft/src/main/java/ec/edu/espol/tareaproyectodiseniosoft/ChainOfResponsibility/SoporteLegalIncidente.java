@@ -4,15 +4,21 @@ import ec.edu.espol.tareaproyectodiseniosoft.Incidente;
 
 public class SoporteLegalIncidente extends ManejadorIncidente {
     @Override
-    public void manejarIncidente(Incidente incidente) {
-        if (!incidente.isResuelto()) {
-            System.out.println("Incidente manejado por soporte legal.");
-            incidente.setResuelto(true);
+    public boolean puedeManejar(Incidente incidente) {
+        return !incidente.isResuelto();
+    }
+    @Override
+    protected void resolverIncidente(Incidente incidente) {
+        System.out.println("Incidente manejado por soporte legal.");
+        incidente.setResuelto(true);
+    }
+    @Override
+    protected void manejarIncidente(Incidente incidente){
+        if (puedeManejar(incidente)) {
+            resolverIncidente(incidente);
         } else {
-            System.out.println("Soporte legal no pudo manejar el incidente. Escalando...");
             escalarIncidente(incidente);
         }
     }
-
     
 }

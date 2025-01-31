@@ -8,8 +8,9 @@ public abstract class ManejadorIncidente {
     public void establecerSiguiente(ManejadorIncidente siguiente) {
         this.siguiente = siguiente;
     }
+    public abstract boolean puedeManejar(Incidente incidente);
 
-    public abstract void manejarIncidente(Incidente incidente);
+    protected abstract void manejarIncidente(Incidente incidente);
     
     
     protected void escalarIncidente(Incidente incidente) {
@@ -19,4 +20,5 @@ public abstract class ManejadorIncidente {
             System.out.println("Nadie pudo resolver el incidente. Escalando a soporte externo.");
         }
     }
+    protected abstract void resolverIncidente(Incidente incidente);
 }

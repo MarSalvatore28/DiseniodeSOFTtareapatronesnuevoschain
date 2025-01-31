@@ -4,13 +4,21 @@ import ec.edu.espol.tareaproyectodiseniosoft.Incidente;
 
 public class AnfitrionIncidente extends ManejadorIncidente {
     @Override
-    public void manejarIncidente(Incidente incidente) {
-        if (incidente.getNivelSeveridad() <= 3 && !incidente.isResuelto()) {
-            System.out.println("Incidente manejado por el anfitrión.");
-            incidente.setResuelto(true);
+    public boolean puedeManejar(Incidente incidente) {
+        return incidente.getNivelSeveridad() <= 3 && !incidente.isResuelto();
+    }
+    @Override
+    protected void resolverIncidente(Incidente incidente) {
+        System.out.println("Incidente manejado por el anfitrión.");
+        incidente.setResuelto(true);
+    }
+    @Override
+    protected void manejarIncidente(Incidente incidente){
+        if (puedeManejar(incidente)) {
+            resolverIncidente(incidente);
         } else {
-            System.out.println("El anfitrión no pudo manejar el incidente. Escalando...");
             escalarIncidente(incidente);
         }
     }
 }
+
